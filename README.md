@@ -1,4 +1,6 @@
 # YoutubeDL_interactor
+WORK IN PROGRESS
+
 Basically a wrapper for youtube-dl.
 
 Will allow you to pass commands that youtube-dl would accept.
