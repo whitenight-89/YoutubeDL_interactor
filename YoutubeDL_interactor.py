@@ -59,6 +59,9 @@ class YoutubeDL_interactor:
 
             return output
 
+        if not isinstance(command, list):
+            raise WrongTypeException("command was not given in the form of a list")
+
         if command[0] == "youtube-dl" and command[0] == "youtube-dl.exe":
             command = command[1:]
 
@@ -78,5 +81,8 @@ class YoutubeDL_interactor:
         """
         def _parse_to_list() -> [str]:
             return [command.split(" -")[0]] + [f"-{option}" for option in command.split(" -")[1:]]
+
+        if not isinstance(command, str):
+            raise WrongTypeException("command was not given in the form of a string")
 
         return self.interact_using_list(_parse_to_list())
